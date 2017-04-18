@@ -1,1 +1,8 @@
-/* You can add global styles to this file, and also import other style files */
+.jumbotron {
+  padding-top: 0px;
+
+  background: url("./app/fretboard.png")no-repeat center center;
+  background-size: 180% 130%;
+  height: 350px;
+
+}

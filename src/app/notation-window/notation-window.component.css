@@ -1,0 +1,28 @@
+input {
+  width: 20px;
+}
+td {
+  width: 20px;
+  height: 35px;
+
+}
+th {
+  width: 20px;
+}
+hr {
+  height: 8px;
+}
+span {
+  /*border-radius: 50%;*/
+
+    width: 18px;
+    height: 18px;
+    padding: 8px;
+
+    /*background: #fff;*/
+    /*border: 2px solid #666;*/
+    color: white;
+    text-align: center;
+    font-weight: bolder;
+
+}
