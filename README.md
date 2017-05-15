@@ -1,6 +1,6 @@
-# NotabtionAngular
+# Notabtion
 
-Notabtion is a music notation that allows users to write music into the form, save it and have it display with scrolling animation. This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 1.0.0.
+Notabtion (tm) is a music notation that allows users to write music into the form, save it and have it display with scrolling animation. This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 1.0.0.
 
 ## Planning
 
@@ -10,7 +10,7 @@ Notabtion is a music notation that allows users to write music into the form, sa
 |TODO | Allow for chaining measures together to create a longer part of a song.| Create an object called section that has an array of measures.|
 |TODO | Chain sections together into a full song. | Create a song object that has an array of the different sections, an array called form that has the desired order of the sections, a name and a tempo (beats per minute). |
 |TODO | Add sound playback for notes. | When a note is not empty the matching note from the sampled files should be produced. |
-|TODO | Add a count off at start of song. | Append four click count off section to beginning of song form.| 
+|TODO | Add a count off at start of song. | Append four click count off section to beginning of song form.|
 
 ## Development server
 
