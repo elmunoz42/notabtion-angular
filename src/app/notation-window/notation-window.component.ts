@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 import { Section } from './../section';
 import { Song } from './../song';
 
@@ -8,6 +8,8 @@ import { Song } from './../song';
   styleUrls: ['./notation-window.component.css']
 })
 export class NotationWindowComponent implements OnInit {
+
+  @Output() newSectionSender = new EventEmitter()
 
   firstStringArr: any[]=[];
   secondStringArr: any[]=[];
@@ -409,6 +411,7 @@ export class NotationWindowComponent implements OnInit {
         this.twoMeasureArr=[this.firstStringArr, this.secondStringArr, this.thirdStringArr, this.fourthStringArr, this.fifthStringArr, this.sixthStringArr];
 
 }
+
 
 
 startScrolling(){

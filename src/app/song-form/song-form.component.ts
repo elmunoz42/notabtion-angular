@@ -19,11 +19,11 @@ export class SongFormComponent implements OnInit {
   }
 
   saveSong(inputName: string, inputAuthor: string, inputTranscriber: string, inputTempo: any) {
+
     var newSongToAdd: Song = new Song(inputName, inputAuthor, inputTranscriber, parseInt(inputTempo));
     console.log(newSongToAdd);
-    this.song.sections.push();
-    this.song.form.push(0);
     this.newSongSender.emit(newSongToAdd);
+
   }
 
 }

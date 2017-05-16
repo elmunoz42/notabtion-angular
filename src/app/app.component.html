@@ -1,5 +1,11 @@
 <h1>
   {{title}}
 </h1>
-<app-song-form></app-song-form>
-<app-notation-window></app-notation-window>
+<app-song-form (newSongSender)="addSong($event)"></app-song-form>
+<ul>
+  <li>{{currentSong.title}}</li>
+  <li>{{currentSong.author}}</li>
+  <li>{{currentSong.transcriber}}</li>
+  <li>{{currentSong.tempo}}</li>
+</ul>
+<app-notation-window (newSectionSender)="addSection($event)"></app-notation-window>
