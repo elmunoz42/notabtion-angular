@@ -1,4 +1,10 @@
 <div class="panel">
-  <input >
-  <input >
+  <!-- TODO implement two way data binding. https://www.learnhowtoprogram.com/javascript/angular-js/two-way-data-binding -->
+  <h3>New Song Form</h3>
+  <form>
+    <input [(ngModel)]="name" type="text">
+    <input [(ngModel)]="author" type="text">
+    <input [(ngModel)]="transcriber" type="text">
+    <input [(ngModel)]="tempo" type="number">
+  </form>
 </div>
