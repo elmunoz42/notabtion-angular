@@ -1,10 +1,11 @@
 # Notabtion
 
-Notabtion (tm) is a music notation that allows users to write music into the form, save it and have it display with scrolling animation. This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 1.0.0.
+_Notabtion (tm) is a music notation app that allows users to write music, save it and have it display with scrolling animation. This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 1.0.0._
 
 ## Planning
 
 |Status| Objective | Approach |
+|------|-----------|----------|
 |DONE | 1) Create measure input form. | Create a form with inputs for all strings and measure timings. |
 |DONE | 2) Scrolling representation of saved two measure input. | Use a table and move the saved input with setInterval set at a hard coded time. |
 |TODO | 3) Allow for chaining measures together to create a longer part of a song.| a) Create an object called section that has an array of measures. b) Create a function that pushes the newly created measures to end of the given section. c) Create a more zoomed out display that allows us to see more information at once.|
@@ -13,7 +14,8 @@ Notabtion (tm) is a music notation that allows users to write music into the for
 |TODO | 6) Add sound playback for notes. | When a note is not empty the matching note from the sampled files should be produced. |
 |TODO | 7) Add a count off at start of song. | Append four click count off section to beginning of song form.|
 |TODO | 8) Refactor measure input form to dry up code. | Use property binding and for loops. |
-|TODO |
+|Wishlist | 9) Create touchscreen interface and functionality for playing notes along with Notabtion. | Create a grid of buttons to be pressed. |
+|Wishlist | 10) Match notes played by the user and song and give a resulting rating. | a) Create a function that matches for the notes pitch an timing. b) Display the results with a number counter system. |
 
 ## Development server
 
