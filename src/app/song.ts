@@ -3,10 +3,10 @@ export class Song {
   public form: any[];
 
   constructor(
-    public name: string,
+    public title: string,
     public author: string,
     public transcriber: string,
     public tempo: number,
   ) {}
-  
+
 }

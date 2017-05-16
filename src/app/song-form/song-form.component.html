@@ -1,10 +1,20 @@
 <div class="panel">
-  <!-- TODO implement two way data binding. https://www.learnhowtoprogram.com/javascript/angular-js/two-way-data-binding -->
-  <h3>New Song Form</h3>
-  <form>
-    <input [(ngModel)]="name" type="text">
-    <input [(ngModel)]="author" type="text">
-    <input [(ngModel)]="transcriber" type="text">
-    <input [(ngModel)]="tempo" type="number">
-  </form>
+  <h3>New Song Form:</h3>
+  <div>
+    <label>Song Title</label>
+    <input [(ngModel)]="song.title" type="text">
+    <label>Author</label>
+    <input [(ngModel)]="song.author" type="text">
+    <label>Transcriber</label>
+    <input [(ngModel)]="song.transcriber" type="text">
+    <label>Tempo</label>
+    <input [(ngModel)]="song.tempo" type="number">
+    <button (click)="saveSong(song.title, song.author, song.transcriber, song.tempo)">Save</button>
+  </div>
+  <ul>
+    <li>{{song.title}}</li>
+    <li>{{song.author}}</li>
+    <li>{{song.transcriber}}</li>
+    <li>{{song.tempo}}</li>
+  </ul>
 </div>

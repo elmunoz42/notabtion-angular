@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, EventEmitter, Output } from '@angular/core';
 import { Section } from './../section';
 import { Song } from './../song';
 
@@ -10,10 +10,20 @@ import { Song } from './../song';
 
 export class SongFormComponent implements OnInit {
 
+  @Output() newSongSender = new EventEmitter()
+  song: Song = new Song("","","",90);
+
   constructor() { }
 
   ngOnInit() {
   }
 
-  
+  saveSong(inputName: string, inputAuthor: string, inputTranscriber: string, inputTempo: any) {
+    var newSongToAdd: Song = new Song(inputName, inputAuthor, inputTranscriber, parseInt(inputTempo));
+    console.log(newSongToAdd);
+    this.song.sections.push();
+    this.song.form.push(0);
+    this.newSongSender.emit(newSongToAdd);
+  }
+
 }
