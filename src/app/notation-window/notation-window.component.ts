@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Section } from './../section';
+import { Song } from './../song';
 
 @Component({
   selector: 'app-notation-window',
@@ -407,6 +409,7 @@ export class NotationWindowComponent implements OnInit {
         this.twoMeasureArr=[this.firstStringArr, this.secondStringArr, this.thirdStringArr, this.fourthStringArr, this.fifthStringArr, this.sixthStringArr];
 
 }
+
 
 startScrolling(){
     let _firstArr = this.firstStringArr;

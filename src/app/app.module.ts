@@ -5,11 +5,13 @@ import { HttpModule } from '@angular/http';
 
 import { AppComponent } from './app.component';
 import { NotationWindowComponent } from './notation-window/notation-window.component';
+import { SongFormComponent } from './song-form/song-form.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    NotationWindowComponent
+    NotationWindowComponent,
+    SongFormComponent
   ],
   imports: [
     BrowserModule,
