@@ -1,7 +1,12 @@
 <div class="container">
-  <p>
-    notation-window works!
-  </p>
+  <h3>
+    Create a Notabtion Measure
+  </h3>
+  <div id="section-form">
+    <label>Section Name</label>
+    <input type="text" [(ngModel)]="section.name">
+    <button (click)="saveSectionToSong()">Save Section to Song</button>
+  </div>
   <div class="well">
     <table>
       <div class="">
@@ -436,11 +441,11 @@
     sixth8.value,
     sixth8e.value,
     sixth8and.value,
-    sixth8a.value)" >Submit</button>
+    sixth8a.value)" >Submit to Section</button>
   </div>
 
   <div class="well">
-    
+
   </div>
     <!-- jumbotron -->
     <button (click)="startScrolling()">Start</button>

@@ -10,6 +10,7 @@ import { Song } from './../song';
 export class NotationWindowComponent implements OnInit {
 
   @Output() newSectionSender = new EventEmitter()
+  section: Section = new Section("",[],"");
 
   firstStringArr: any[]=[];
   secondStringArr: any[]=[];
@@ -409,18 +410,33 @@ export class NotationWindowComponent implements OnInit {
           sixth8and,
           sixth8a];
         this.twoMeasureArr=[this.firstStringArr, this.secondStringArr, this.thirdStringArr, this.fourthStringArr, this.fifthStringArr, this.sixthStringArr];
-
+        this.section.content.push(this.twoMeasureArr);
+        this.section.song = '';
+        console.log(this.section.content);
 }
 
-
+saveSectionToSong() {
+  var newSectionToAdd: Section = new Section(this.section.name, this.section.content, this.section.song);
+  console.log(newSectionToAdd);
+  this.newSectionSender.emit(newSectionToAdd);
+}
 
 startScrolling(){
-    let _firstArr = this.firstStringArr;
-    let _secondArr = this.secondStringArr;
-    let _thirdArr = this.thirdStringArr;
-    let _fourthArr = this.fourthStringArr;
-    let _fifthArr = this.fifthStringArr;
-    let _sixthArr = this.sixthStringArr;
+  let _firstArr = [];
+  let _secondArr = [];
+  let _thirdArr = [];
+  let _fourthArr = [];
+  let _fifthArr = [];
+  let _sixthArr = [];
+    for (let i=0; i<this.section.content.length; i++) {
+      _firstArr.concat(this.section.content[i][0]);
+      _secondArr.concat(this.section.content[i][1]);
+      _thirdArr.concat(this.section.content[i][2]);
+      _fourthArr.concat(this.section.content[i][3]);
+      _fifthArr.concat(this.section.content[i][4]);
+      _sixthArr.concat(this.section.content[i][5]);
+      console.log(_firstArr);
+    }
     setInterval(function(){
       if(_firstArr.length>1){
         _firstArr.splice(0,1);
@@ -435,3 +451,24 @@ startScrolling(){
     )
   }
 }
+// startScrolling(){
+//     let _firstArr = this.firstStringArr;
+//     let _secondArr = this.secondStringArr;
+//     let _thirdArr = this.thirdStringArr;
+//     let _fourthArr = this.fourthStringArr;
+//     let _fifthArr = this.fifthStringArr;
+//     let _sixthArr = this.sixthStringArr;
+//     setInterval(function(){
+//       if(_firstArr.length>1){
+//         _firstArr.splice(0,1);
+//         _secondArr.splice(0,1);
+//         _thirdArr.splice(0,1);
+//         _fourthArr.splice(0,1);
+//         _fifthArr .splice(0,1);
+//         _sixthArr.splice(0,1);
+//         console.log(_firstArr[0]);
+//       }
+//     }, 250
+//     )
+//   }
+// }

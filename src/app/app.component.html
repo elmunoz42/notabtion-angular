@@ -2,10 +2,12 @@
   {{title}}
 </h1>
 <app-song-form (newSongSender)="addSong($event)"></app-song-form>
+<app-notation-window (newSectionSender)="addSection($event)"></app-notation-window>
+
 <ul>
   <li>{{currentSong.title}}</li>
   <li>{{currentSong.author}}</li>
   <li>{{currentSong.transcriber}}</li>
   <li>{{currentSong.tempo}}</li>
+  <!-- <li ngIf="currentSong.sections" *ngFor="let section of currentSong.sections">{{section.name}}, {{section.song}}</li> -->
 </ul>
-<app-notation-window (newSectionSender)="addSection($event)"></app-notation-window>
