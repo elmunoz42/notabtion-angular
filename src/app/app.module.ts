@@ -6,12 +6,14 @@ import { HttpModule } from '@angular/http';
 import { AppComponent } from './app.component';
 import { NotationWindowComponent } from './notation-window/notation-window.component';
 import { SongFormComponent } from './song-form/song-form.component';
+import { ScrollingDisplayComponent } from './scrolling-display/scrolling-display.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     NotationWindowComponent,
-    SongFormComponent
+    SongFormComponent,
+    ScrollingDisplayComponent
   ],
   imports: [
     BrowserModule,

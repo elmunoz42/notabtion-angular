@@ -1,0 +1,31 @@
+<div class="container">
+    <!-- jumbotron -->
+  <button (click)="startScrolling()">Start Scrolling</button>
+  <div class="well">
+    <h2>Display Window</h2>
+  </div>
+  <div class="jumbotron" id="fretBoard">
+    <table>
+      <hr>
+      <hr>
+      <tr>
+        <td *ngFor="let note of _firstArr"><span>{{note}}</span></td>
+      </tr>
+      <tr>
+        <td *ngFor="let note of _secondArr"><span>{{note}}</span></td>
+      </tr>
+      <tr>
+        <td *ngFor="let note of _thirdArr"><span>{{note}}</span></td>
+      </tr>
+      <tr>
+        <td *ngFor="let note of _fourthArr"><span>{{note}}</span></td>
+      </tr>
+      <tr>
+        <td *ngFor="let note of _fifthArr"><span>{{note}}</span></td>
+      </tr>
+      <tr>
+        <td *ngFor="let note of _sixthArr"><span>{{note}}</span></td>
+      </tr>
+    </table>
+  </div>
+</div>
