@@ -436,6 +436,7 @@ startScrolling(){
     let _fourthArr = this.fourthStringArr;
     let _fifthArr = this.fifthStringArr;
     let _sixthArr = this.sixthStringArr;
+    console.log(_firstArr);
     setInterval(function(){
       if(_firstArr.length>1){
         _firstArr.splice(0,1);
@@ -444,7 +445,6 @@ startScrolling(){
         _fourthArr.splice(0,1);
         _fifthArr .splice(0,1);
         _sixthArr.splice(0,1);
-        console.log(_firstArr[0]);
       }
     }, 250
     )

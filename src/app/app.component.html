@@ -3,7 +3,7 @@
 </h1>
 <app-song-form (newSongSender)="addSong($event)"></app-song-form>
 <app-notation-window (newSectionSender)="addSection($event)"></app-notation-window>
-<app-scrolling-display></app-scrolling-display>
+<app-scrolling-display [songToDisplay]="currentSong"></app-scrolling-display>
 <ul>
   <li>{{currentSong.title}}</li>
   <li>{{currentSong.author}}</li>

@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 import { Section } from '../section';
 import { Song } from '../song';
 
@@ -9,14 +9,17 @@ import { Song } from '../song';
 })
 export class ScrollingDisplayComponent implements OnInit {
 
-  section: Section = new Section("",[1,2,3],"");
-  
-  _firstArr: any[] = [];
-  _secondArr: any[] = [];
-  _thirdArr: any[] = [];
-  _fourthArr: any[] = [];
-  _fifthArr: any[] = [];
-  _sixthArr: any[] = [];
+  @Input() songToDisplay;
+
+  countIn: any[] = ['1','-','-','-','2','-','-','-','3','-','-','-','4','-','-','-'];
+  section: Section= new Section("",[],"");
+
+  firstStringArr: any[] = this.countIn;
+  secondStringArr: any[] = this.countIn;
+  thirdStringArr: any[] = this.countIn;
+  fourthStringArr: any[] = this.countIn;
+  fifthStringArr: any[] = this.countIn;
+  sixthStringArr: any[] = this.countIn;
 
   constructor() { }
 
@@ -24,35 +27,49 @@ export class ScrollingDisplayComponent implements OnInit {
   }
 
   startScrolling(){
-    this._firstArr.concat(this.section.content[0][0]);
-    this._secondArr = this.section.content[0][1];
-    this._thirdArr = this.section.content[0][2];
-    this._fourthArr = this.section.content[0][3];
-    this._fifthArr = this.section.content[0][4];
-    this._sixthArr = this.section.content[0][5];
-    console.log("_firstArr" + this._firstArr);
-    console.log("this.section.content.length: " + this.section.content.length);
-    for (let i = 1; i < this.section.content.length; i++) {
-      this._firstArr.concat(this.section.content[i][0]);
-      this._secondArr.concat(this.section.content[i][1]);
-      this._thirdArr.concat(this.section.content[i][2]);
-      this._fourthArr.concat(this.section.content[i][3]);
-      this._fifthArr.concat(this.section.content[i][4]);
-      this._sixthArr.concat(this.section.content[i][5]);
-      console.log("this.section.content[i][0]" + this.section.content[i][0]);
-      console.log("_firstArr" + this._firstArr);
+
+    console.log(this.songToDisplay);
+    if(this.songToDisplay) {
+      console.log(this.songToDisplay.sections);
+      this.section = this.songToDisplay.sections[1]; // Zero section empty Just one section for now.
+      console.log(this.section);
     }
-    let sectionLength: number = this._firstArr.length;
+
+    console.log("firstStringArr" + this.firstStringArr);
+    console.log("this.section.content.length: " + this.section.content.length);
+
+    for (let i = 0; i < this.section.content.length; i++) {
+
+      let _firstArr = [].push.apply(this.firstStringArr, this.section.content[i][0]);
+      let _secondArr = [].push.apply(this.secondStringArr, this.section.content[i][1]);
+      let _thirdArr = [].push.apply(this.thirdStringArr, this.section.content[i][2]);
+      let _fourthArr = [].push.apply(this.fourthStringArr, this.section.content[i][3]);
+      let _fifthArr = [].push.apply(this.fifthStringArr, this.section.content[i][4]);
+      let _sixthArr = [].push.apply(this.sixthStringArr, this.section.content[i][5]);
+
+
+      console.log("this.section.content[i][0]" + this.section.content[i][0]);
+      console.log("_firstArr" + this.firstStringArr);
+    }
+
+    let _firstArr = this.firstStringArr;
+    let _secondArr = this.secondStringArr;
+    let _thirdArr = this.thirdStringArr;
+    let _fourthArr = this.fourthStringArr;
+    let _fifthArr = this.fifthStringArr;
+    let _sixthArr = this.sixthStringArr;
+
+    let sectionLength: number = this.firstStringArr.length;
     setTimeout(function(){
       setInterval(function(){
         if(sectionLength>1){
-          this._firstArr.splice(0,1);
-          this._secondArr.splice(0,1);
-          this._thirdArr.splice(0,1);
-          this._fourthArr.splice(0,1);
-          this._fifthArr .splice(0,1);
-          this._sixthArr.splice(0,1);
-          console.log("_firstArr at " + this._firstArr);
+          _firstArr.splice(0,1);
+          _secondArr.splice(0,1);
+          _thirdArr.splice(0,1);
+          _fourthArr.splice(0,1);
+          _fifthArr .splice(0,1);
+          _sixthArr.splice(0,1);
+          console.log("firstStringArr at " + this.firstStringArr);
         }
       }, 250)
     }, 1000);

@@ -2,11 +2,11 @@
   <h3>New Song Form:</h3>
   <div>
     <label>Song Title</label>
-    <input [(ngModel)]="song.title" type="text">
+    <input [(ngModel)]="song.title" type="text" placeholder="testTitle">
     <label>Author</label>
-    <input [(ngModel)]="song.author" type="text">
+    <input [(ngModel)]="song.author" type="text" placeholder="testAuthor">
     <label>Transcriber</label>
-    <input [(ngModel)]="song.transcriber" type="text">
+    <input [(ngModel)]="song.transcriber" type="text" placeholder="testTranscriber">
     <label>Tempo</label>
     <input [(ngModel)]="song.tempo" type="number">
     <button (click)="saveSong(song.title, song.author, song.transcriber, song.tempo)">Save</button>
