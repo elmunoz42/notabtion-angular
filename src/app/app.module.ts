@@ -2,7 +2,6 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
-import { IonicAudioModule } from 'ionic-audio';
 import { AppComponent } from './app.component';
 import { NotationWindowComponent } from './notation-window/notation-window.component';
 import { SongFormComponent } from './song-form/song-form.component';
@@ -18,8 +17,7 @@ import { ScrollingDisplayComponent } from './scrolling-display/scrolling-display
   imports: [
     BrowserModule,
     FormsModule,
-    HttpModule,
-    IonicAudioModule.forRoot()
+    HttpModule
   ],
   providers: [],
   bootstrap: [AppComponent]
