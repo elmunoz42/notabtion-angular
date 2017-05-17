@@ -20,14 +20,22 @@ export class ScrollingDisplayComponent implements OnInit {
   fourthStringArr: any[] = this.countIn;
   fifthStringArr: any[] = this.countIn;
   sixthStringArr: any[] = this.countIn;
+  A3: any;
 
   constructor() { }
 
+  playAudio() {
+    this.A3.play();
+    alert("hit me!");
+  }
   ngOnInit() {
+    this.A3 = document.getElementById("A3");
+    console.log("this.A3"+this.A3);
   }
 
   startScrolling(){
 
+    this.playAudio();
     console.log(this.songToDisplay);
     if(this.songToDisplay) {
       console.log(this.songToDisplay.sections);
