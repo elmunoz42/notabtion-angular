@@ -73,29 +73,96 @@ export class ScrollingDisplayComponent implements OnInit {
 
   FirstStringPlayAudio(note: string) {
 
+    if(note==="e"){
+      this.E3.pause();
+      this.E3.currentTime = 0;
+      this.E3.play();
+      console.log('recognized g on first string');
+    }
+    if(note==="f"){
+      this.F3.pause();
+      this.F3.currentTime = 0;
+      this.F3.play();
+      console.log('recognized g on first string');
+    }
+    if(note==="g"){
+      this.G3.pause();
+      this.G3.currentTime = 0;
+      this.G3.play();
+      console.log('recognized g on first string');
+    }
     if(note==="a"){
-      this.A2.pause();
-      this.A2.currentTime = 0;
-      this.A2.play();
+      this.A3.pause();
+      this.A3.currentTime = 0;
+      this.A3.play();
       console.log('recognized a on first string');
     }
+    if(note==="b"){
+      this.B3.pause();
+      this.B3.currentTime = 0;
+      this.B3.play();
+      console.log('recognized g on first string');
+    }
+
+  }
+
+  SecondStringPlayAudio(note: string = "") {
+    if(note==="b"){
+      this.B2.pause();
+      this.B2.currentTime = 0;
+      this.B2.play();
+      console.log('recognized g on first string');
+    }
+    if(note==="c"){
+      this.C3.pause();
+      this.C3.currentTime = 0;
+      this.C3.play();
+      console.log('recognized g on first string');
+    }
+    if(note==="d"){
+      this.D3.pause();
+      this.D3.currentTime = 0;
+      this.D3.play();
+      console.log('recognized g on first string');
+    }
+    if(note==="e"){
+      this.E3.pause();
+      this.E3.currentTime = 0;
+      this.E3.play();
+      console.log('recognized g on first string');
+    }
+    if(note==="f"){
+      this.F3.pause();
+      this.F3.currentTime = 0;
+      this.F3.play();
+      console.log('recognized g on first string');
+    }
+    if(note==="g"){
+      this.G3.pause();
+      this.G3.currentTime = 0;
+      this.G3.play();
+      console.log('recognized g on first string');
+    }
+    if(note==="a"){
+      this.A3.pause();
+      this.A3.currentTime = 0;
+      this.A3.play();
+      console.log('recognized a on first string');
+    }
+  }
+
+  ThirdStringPlayAudio(note: string = "") {
     if(note==="g"){
       this.G2.pause();
       this.G2.currentTime = 0;
       this.G2.play();
       console.log('recognized g on first string');
     }
-    if(note==="f"){
-      this.F2.pause();
-      this.F2.currentTime = 0;
-      this.F2.play();
-      console.log('recognized g on first string');
-    }
-    if(note==="e"){
-      this.E2.pause();
-      this.E2.currentTime = 0;
-      this.E2.play();
-      console.log('recognized g on first string');
+    if(note==="a"){
+      this.A2.pause();
+      this.A2.currentTime = 0;
+      this.A2.play();
+      console.log('recognized a on first string');
     }
     if(note==="b"){
       this.B2.pause();
@@ -115,16 +182,40 @@ export class ScrollingDisplayComponent implements OnInit {
       this.D3.play();
       console.log('recognized g on first string');
     }
-
+    if(note==="e"){
+      this.E3.pause();
+      this.E3.currentTime = 0;
+      this.E3.play();
+      console.log('recognized g on first string');
+    }
+    if(note==="f"){
+      this.F3.pause();
+      this.F3.currentTime = 0;
+      this.F3.play();
+      console.log('recognized g on first string');
+    }
 
   }
 
-  SecondStringPlayAudio(note: string = "") {
-    if(note==="a"){
-      this.A3.pause();
-      this.A3.currentTime = 0;
-      this.A3.play();
-      console.log('recognized a on first string');
+  FourthStringPlayAudio(note: string = "") {
+
+    if(note==="d"){
+      this.D2.pause();
+      this.D2.currentTime = 0;
+      this.D2.play();
+      console.log('recognized g on first string');
+    }
+    if(note==="e"){
+      this.E2.pause();
+      this.E2.currentTime = 0;
+      this.E2.play();
+      console.log('recognized g on first string');
+    }
+    if(note==="f"){
+      this.F2.pause();
+      this.F2.currentTime = 0;
+      this.F2.play();
+      console.log('recognized g on first string');
     }
     if(note==="g"){
       this.G2.pause();
@@ -132,20 +223,142 @@ export class ScrollingDisplayComponent implements OnInit {
       this.G2.play();
       console.log('recognized g on first string');
     }
+    if(note==="a"){
+      this.A2.pause();
+      this.A2.currentTime = 0;
+      this.A2.play();
+      console.log('recognized a on first string');
+    }
+    if(note==="b"){
+      this.B2.pause();
+      this.B2.currentTime = 0;
+      this.B2.play();
+      console.log('recognized g on first string');
+    }
+    if(note==="c"){
+      this.C3.pause();
+      this.C3.currentTime = 0;
+      this.C3.play();
+      console.log('recognized g on first string');
+    }
+  }
+  FifthStringPlayAudio(note: string = "") {
+    if(note==="a"){
+      this.A1.pause();
+      this.A1.currentTime = 0;
+      this.A1.play();
+      console.log('recognized a on first string');
+    }
+    if(note==="b"){
+      this.B1.pause();
+      this.B1.currentTime = 0;
+      this.B1.play();
+      console.log('recognized b on first string');
+    }
+    if(note==="c"){
+      this.C2.pause();
+      this.C2.currentTime = 0;
+      this.C2.play();
+      console.log('recognized c on first string');
+    }
+    if(note==="d"){
+      this.D2.pause();
+      this.D2.currentTime = 0;
+      this.D2.play();
+      console.log('recognized d on first string');
+    }
+    if(note==="e"){
+      this.E2.pause();
+      this.E2.currentTime = 0;
+      this.E2.play();
+      console.log('recognized e on first string');
+    }
+    if(note==="f"){
+      this.F2.pause();
+      this.F2.currentTime = 0;
+      this.F2.play();
+      console.log('recognized f on first string');
+    }
+    if(note==="g"){
+      this.G2.pause();
+      this.G2.currentTime = 0;
+      this.G2.play();
+      console.log('recognized g on first string');
+    }
+
+  }
+  SixthStringPlayAudio(note: string = "") {
+    if(note==="e"){
+      this.E1.pause();
+      this.E1.currentTime = 0;
+      this.E1.play();
+      console.log('recognized g on first string');
+    }
+    if(note==="f"){
+      this.F1.pause();
+      this.F1.currentTime = 0;
+      this.F1.play();
+      console.log('recognized g on first string');
+    }
+    if(note==="g"){
+      this.G1.pause();
+      this.G1.currentTime = 0;
+      this.G1.play();
+      console.log('recognized g on first string');
+    }
+    if(note==="a"){
+      this.A1.pause();
+      this.A1.currentTime = 0;
+      this.A1.play();
+      console.log('recognized a on first string');
+    }
+    if(note==="b"){
+      this.B1.pause();
+      this.B1.currentTime = 0;
+      this.B1.play();
+      console.log('recognized g on first string');
+    }
+    if(note==="c"){
+      this.C2.pause();
+      this.C2.currentTime = 0;
+      this.C2.play();
+      console.log('recognized g on first string');
+    }
+    if(note==="d"){
+      this.D2.pause();
+      this.D2.currentTime = 0;
+      this.D2.play();
+      console.log('recognized g on first string');
+    }
+
   }
 
   ngOnInit() {
     this.Beat80 = document.getElementById("Beat80");
-    this.A2 = document.getElementById("A2");
-    this.G2 = document.getElementById("G2");
-    this.F2 = document.getElementById("F2");
+    this.C1 = document.getElementById("C1");
+    this.D1 = document.getElementById("D1");
+    this.E1 = document.getElementById("E1");
+    this.F1 = document.getElementById("F1");
+    this.G1 = document.getElementById("G1");
+    this.A1 = document.getElementById("A1");
+    this.B1 = document.getElementById("B1");
+    this.C2 = document.getElementById("C2");
+    this.D2 = document.getElementById("D3");
     this.E2 = document.getElementById("E2");
+    this.F2 = document.getElementById("F2");
+    this.G2 = document.getElementById("G2");
+    this.A2 = document.getElementById("A2");
     this.B2 = document.getElementById("B2");
     this.C3 = document.getElementById("C3");
-    this.D3 = document.getElementById("B3");
-
+    this.D3 = document.getElementById("D3");
+    this.E3 = document.getElementById("E3");
+    this.F3 = document.getElementById("F3");
+    this.G3 = document.getElementById("G3");
+    this.A3 = document.getElementById("A3");
 
   }
+
+  scrollPlay: any;
 
   startScrolling(){
     // context allows for this to be used in setInterval setting.
@@ -201,31 +414,38 @@ export class ScrollingDisplayComponent implements OnInit {
 
     let sectionLength: number = _firstArr.length;
     // let sectionLength: number = this.firstStringArr.length;
-      setInterval(function(){
-        if(sectionLength>1){
-          _firstArr.splice(0,1);
-          _secondArr.splice(0,1);
-          _thirdArr.splice(0,1);
-          _fourthArr.splice(0,1);
-          _fifthArr .splice(0,1);
-          _sixthArr.splice(0,1);
-          console.log("firstStringArr at " + _firstArr[0]);
-        }
-        if(!_firstArr[1]){
-            _firstArr[1]='';
-        }
-        console.log("_firstArr[1]"+_firstArr[1]);
-        context.FirstStringPlayAudio(_firstArr[0]);
-          // console.log(_firstArr[1]);
-          // this.SecondStringPlayAudio(_firstArr[1].toString());
-          // console.log(_firstArr[2]);
-          // this.playAudio(_firstArr[2].toString());
-          // console.log(_firstArr[3]);
-          // this.playAudio(_firstArr[3].toString());
-          // console.log(_firstArr[4]);
-          // this.playAudio(_firstArr[4].toString());
-          // console.log(_firstArr[5]);
-          // this.playAudio(_firstArr[5].toString());
-      }, 375);
+    context.scrollPlay = setInterval(function(){
+      if(sectionLength>1){
+        _firstArr.splice(0,1);
+        _secondArr.splice(0,1);
+        _thirdArr.splice(0,1);
+        _fourthArr.splice(0,1);
+        _fifthArr .splice(0,1);
+        _sixthArr.splice(0,1);
+        console.log("firstStringArr at " + _firstArr[0]);
+      }
+      if(!_firstArr[1]){
+          _firstArr[1]='';
+      }
+
+      context.FirstStringPlayAudio(_firstArr[0]);
+        // console.log(_firstArr[1]);
+      context.SecondStringPlayAudio(_secondArr[0].toString());
+        // console.log(_firstArr[2]);
+      context.ThirdStringPlayAudio(_thirdArr[2].toString());
+        // console.log(_firstArr[3]);
+      context.FourthStringPlayAudio(_fourthArr[3].toString());
+        // console.log(_firstArr[4]);
+      context.FifthStringPlayAudio(_fifthArr[4].toString());
+        // console.log(_firstArr[5]);
+      context.SixthStringPlayAudio(_sixthArr[5].toString());
+    }, 375);
+
   }
+
+  stopScrolling() {
+    this.Beat80.pause();
+    clearInterval(this.scrollPlay);
+  }
+
 }
