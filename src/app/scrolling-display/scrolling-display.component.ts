@@ -365,7 +365,7 @@ export class ScrollingDisplayComponent implements OnInit {
     var context = this;
 
     //audio test
-    this.playAudio();
+
     // this.SecondStringPlayAudio("a");
     // console.log(this.songToDisplay);
 
@@ -414,7 +414,12 @@ export class ScrollingDisplayComponent implements OnInit {
 
     let sectionLength: number = _firstArr.length;
     // let sectionLength: number = this.firstStringArr.length;
+
+    this.playAudio();
+    setTimeout(function(){
+
     context.scrollPlay = setInterval(function(){
+
       if(sectionLength>1){
         _firstArr.splice(0,1);
         _secondArr.splice(0,1);
@@ -439,12 +444,13 @@ export class ScrollingDisplayComponent implements OnInit {
       context.FifthStringPlayAudio(_fifthArr[4].toString());
         // console.log(_firstArr[5]);
       context.SixthStringPlayAudio(_sixthArr[5].toString());
-    }, 375);
+      }, 375);
 
+    }, 170);
   }
-
   stopScrolling() {
     this.Beat80.pause();
+    // this.Beat80.currentTime = 0;
     clearInterval(this.scrollPlay);
   }
 
