@@ -11,15 +11,15 @@ export class ScrollingDisplayComponent implements OnInit {
 
   @Input() songToDisplay;
 
-  countIn: any[] = ['1','-','-','-','2','-','-','-','3','-','-','-','4','-','-','-'];
+  countIn: string[] = ['1','-','-','-','2','-','-','-','3','-','-','-','4','-','-','-'];
   section: Section= new Section("",[],"");
 
-  firstStringArr: any[] = this.countIn;
-  secondStringArr: any[] = this.countIn;
-  thirdStringArr: any[] = this.countIn;
-  fourthStringArr: any[] = this.countIn;
-  fifthStringArr: any[] = this.countIn;
-  sixthStringArr: any[] = this.countIn;
+  firstStringArr: string[] = this.countIn;
+  secondStringArr: string[] = this.countIn;
+  thirdStringArr: string[] = this.countIn;
+  fourthStringArr: string[] = this.countIn;
+  fifthStringArr: string[] = this.countIn;
+  sixthStringArr: string[] = this.countIn;
 
   // create variables for all audio elements.
   A1: any;
@@ -91,12 +91,17 @@ export class ScrollingDisplayComponent implements OnInit {
 
   SecondStringPlayAudio(note: string = "") {
     if(note==="a"){
+      this.A3.pause();
+      this.A3.currentTime = 0;
       this.A3.play();
+      console.log('recognized a on first string');
     }
     if(note==="g"){
+      this.G2.pause();
+      this.G2.currentTime = 0;
       this.G2.play();
+      console.log('recognized g on first string');
     }
-    // alert("hit me!");
   }
 
   ngOnInit() {
@@ -107,14 +112,21 @@ export class ScrollingDisplayComponent implements OnInit {
   }
 
   startScrolling(){
+    // context allows for this to be used in setInterval setting.
+    var context = this;
 
-    // this.FirstStringPlayAudio("a");
-    this.SecondStringPlayAudio("g");
-    console.log(this.songToDisplay);
+    //audio test
+    this.FirstStringPlayAudio("a");
+    // this.SecondStringPlayAudio("a");
+    // console.log(this.songToDisplay);
+
+    // if there's a song this.section is equal to the song's section.
     if(this.songToDisplay) {
-      console.log(this.songToDisplay.sections);
-      this.section = this.songToDisplay.sections[1]; // Zero section empty Just one section for now.
-      console.log(this.section);
+      console.log("this.songToDisplay.sections"+this.songToDisplay.sections);
+      this.section = this.songToDisplay.sections[1];
+      // Zero section empty Just one section for now.
+      console.log("this.section"+typeof(this.section.content[1][0][0])+this.section.content[1][0][0]);
+
     }
 
     console.log("firstStringArr" + this.firstStringArr);
@@ -122,16 +134,16 @@ export class ScrollingDisplayComponent implements OnInit {
 
     for (let i = 0; i < this.section.content.length; i++) {
 
-      let _firstArr = [].push.apply(this.firstStringArr, this.section.content[i][0]);
-      let _secondArr = [].push.apply(this.secondStringArr, this.section.content[i][1]);
-      let _thirdArr = [].push.apply(this.thirdStringArr, this.section.content[i][2]);
-      let _fourthArr = [].push.apply(this.fourthStringArr, this.section.content[i][3]);
-      let _fifthArr = [].push.apply(this.fifthStringArr, this.section.content[i][4]);
-      let _sixthArr = [].push.apply(this.sixthStringArr, this.section.content[i][5]);
+      let _firstArr: string[]= [].push.apply(this.firstStringArr, this.section.content[i][0]);
+      let _secondArr: string[]= [].push.apply(this.secondStringArr, this.section.content[i][1]);
+      let _thirdArr: string[] = [].push.apply(this.thirdStringArr, this.section.content[i][2]);
+      let _fourthArr: string[] = [].push.apply(this.fourthStringArr, this.section.content[i][3]);
+      let _fifthArr: string[] = [].push.apply(this.fifthStringArr, this.section.content[i][4]);
+      let _sixthArr: string[] = [].push.apply(this.sixthStringArr, this.section.content[i][5]);
 
 
       console.log("this.section.content[i][0]" + this.section.content[i][0]);
-      console.log("_firstArr" + this.firstStringArr);
+      console.log("_firstArr" + typeof(_firstArr[0]));
     }
 
     let _firstArr = this.firstStringArr;
@@ -142,7 +154,7 @@ export class ScrollingDisplayComponent implements OnInit {
     let _sixthArr = this.sixthStringArr;
 
     let sectionLength: number = this.firstStringArr.length;
-    setTimeout(function(){
+    // setTimeout(function(){
       setInterval(function(){
         if(sectionLength>1){
           _firstArr.splice(0,1);
@@ -151,13 +163,13 @@ export class ScrollingDisplayComponent implements OnInit {
           _fourthArr.splice(0,1);
           _fifthArr .splice(0,1);
           _sixthArr.splice(0,1);
-          console.log("firstStringArr at " + this.firstStringArr);
+          console.log("firstStringArr at " + _firstArr[0]);
         }
-          if(!_firstArr[1]){
+        if(!_firstArr[1]){
             _firstArr[1]='';
-          }
-          console.log(_firstArr[1]);
-          this.playAudio(_firstArr[1].toString());
+        }
+        console.log(_firstArr[1]);
+        context.FirstStringPlayAudio(_firstArr[0].toString());
           // console.log(_firstArr[1]);
           // this.SecondStringPlayAudio(_firstArr[1].toString());
           // console.log(_firstArr[2]);
@@ -168,7 +180,7 @@ export class ScrollingDisplayComponent implements OnInit {
           // this.playAudio(_firstArr[4].toString());
           // console.log(_firstArr[5]);
           // this.playAudio(_firstArr[5].toString());
-      }, 250)
-    }, 1000);
+      }, 250);
+    // }, 1000);
   }
 }
