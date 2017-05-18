@@ -11,7 +11,7 @@ export class ScrollingDisplayComponent implements OnInit {
 
   @Input() songToDisplay;
 
-  countIn: string[] = ['1','-','-','-','2','-','-','-','3','-','-','-','4','-','-','-'];
+  countIn: string[] = ['1','-','-','-','2','-','-','-','3','-','-','-','4','-','-','-',];
   section: Section= new Section("",[],"");
 
   firstStringArr: string[] = this.countIn;
@@ -21,6 +21,7 @@ export class ScrollingDisplayComponent implements OnInit {
   fifthStringArr: string[] = this.countIn;
   sixthStringArr: string[] = this.countIn;
 
+  Beat80: any;
   // create variables for all audio elements.
   A1: any;
   A2: any;
@@ -60,24 +61,22 @@ export class ScrollingDisplayComponent implements OnInit {
   GS3: any;
 
 
-
-
   constructor() { }
 
-  playAudio(note: string) {
-    if(note!=""){
-      this.A3.pause();
-      this.A3.currentTime = 0;
-      this.A3.play();
-    }
+  playAudio() {
+
+      this.Beat80.pause();
+      this.Beat80.currentTime = 0;
+      this.Beat80.play();
+
   }
 
   FirstStringPlayAudio(note: string) {
 
     if(note==="a"){
-      this.A3.pause();
-      this.A3.currentTime = 0;
-      this.A3.play();
+      this.A2.pause();
+      this.A2.currentTime = 0;
+      this.A2.play();
       console.log('recognized a on first string');
     }
     if(note==="g"){
@@ -86,6 +85,37 @@ export class ScrollingDisplayComponent implements OnInit {
       this.G2.play();
       console.log('recognized g on first string');
     }
+    if(note==="f"){
+      this.F2.pause();
+      this.F2.currentTime = 0;
+      this.F2.play();
+      console.log('recognized g on first string');
+    }
+    if(note==="e"){
+      this.E2.pause();
+      this.E2.currentTime = 0;
+      this.E2.play();
+      console.log('recognized g on first string');
+    }
+    if(note==="b"){
+      this.B2.pause();
+      this.B2.currentTime = 0;
+      this.B2.play();
+      console.log('recognized g on first string');
+    }
+    if(note==="c"){
+      this.C3.pause();
+      this.C3.currentTime = 0;
+      this.C3.play();
+      console.log('recognized g on first string');
+    }
+    if(note==="d"){
+      this.D3.pause();
+      this.D3.currentTime = 0;
+      this.D3.play();
+      console.log('recognized g on first string');
+    }
+
 
   }
 
@@ -105,10 +135,16 @@ export class ScrollingDisplayComponent implements OnInit {
   }
 
   ngOnInit() {
-    this.A3 = document.getElementById("A3");
-    console.log("this.A3"+this.A3);
+    this.Beat80 = document.getElementById("Beat80");
+    this.A2 = document.getElementById("A2");
     this.G2 = document.getElementById("G2");
-    console.log("this.G2"+this.G2);
+    this.F2 = document.getElementById("F2");
+    this.E2 = document.getElementById("E2");
+    this.B2 = document.getElementById("B2");
+    this.C3 = document.getElementById("C3");
+    this.D3 = document.getElementById("B3");
+
+
   }
 
   startScrolling(){
@@ -116,7 +152,7 @@ export class ScrollingDisplayComponent implements OnInit {
     var context = this;
 
     //audio test
-    this.FirstStringPlayAudio("a");
+    this.playAudio();
     // this.SecondStringPlayAudio("a");
     // console.log(this.songToDisplay);
 
@@ -132,29 +168,39 @@ export class ScrollingDisplayComponent implements OnInit {
     console.log("firstStringArr" + this.firstStringArr);
     console.log("this.section.content.length: " + this.section.content.length);
 
+    let _firstArr: string[] = this.firstStringArr;
+    let _secondArr: string[] = this.secondStringArr;
+    let _thirdArr: string[] = this.thirdStringArr;
+    let _fourthArr: string[] = this.fourthStringArr;
+    let _fifthArr: string[] = this.fifthStringArr;
+    let _sixthArr: string[] = this.sixthStringArr;
+
     for (let i = 0; i < this.section.content.length; i++) {
 
-      let _firstArr: string[]= [].push.apply(this.firstStringArr, this.section.content[i][0]);
-      let _secondArr: string[]= [].push.apply(this.secondStringArr, this.section.content[i][1]);
-      let _thirdArr: string[] = [].push.apply(this.thirdStringArr, this.section.content[i][2]);
-      let _fourthArr: string[] = [].push.apply(this.fourthStringArr, this.section.content[i][3]);
-      let _fifthArr: string[] = [].push.apply(this.fifthStringArr, this.section.content[i][4]);
-      let _sixthArr: string[] = [].push.apply(this.sixthStringArr, this.section.content[i][5]);
+      _firstArr = (_firstArr + "," + this.section.content[i][0]).split(',');
+      _secondArr= (_secondArr + "," + this.section.content[i][1]).split(',');
+      _thirdArr = (_thirdArr + "," + this.section.content[i][2]).split(',');
+      _fourthArr = (_fourthArr + "," + this.section.content[i][3]).split(',');
+      _fifthArr = (_fifthArr + "," + this.section.content[i][4]).split(',');
+      _sixthArr = (_sixthArr + "," + this.section.content[i][5]).split(',');
 
+      // let _firstArr: string[]= [].push.apply(this.firstStringArr, this.section.content[i][0]);
 
-      console.log("this.section.content[i][0]" + this.section.content[i][0]);
-      console.log("_firstArr" + typeof(_firstArr[0]));
+      // console.log("this.section.content[i][0]" + this.section.content[i][0]);
+      console.log("_firstArr 0 :" + typeof(_firstArr[0]));
     }
+    console.log("_firstArr" + typeof(_firstArr));
 
-    let _firstArr = this.firstStringArr;
-    let _secondArr = this.secondStringArr;
-    let _thirdArr = this.thirdStringArr;
-    let _fourthArr = this.fourthStringArr;
-    let _fifthArr = this.fifthStringArr;
-    let _sixthArr = this.sixthStringArr;
+    this.firstStringArr = _firstArr;
+    this.secondStringArr = _secondArr;
+    this.thirdStringArr = _thirdArr;
+    this.fourthStringArr = _fourthArr;
+    this.fifthStringArr = _fifthArr;
+    this.sixthStringArr = _sixthArr;
 
-    let sectionLength: number = this.firstStringArr.length;
-    // setTimeout(function(){
+
+    let sectionLength: number = _firstArr.length;
+    // let sectionLength: number = this.firstStringArr.length;
       setInterval(function(){
         if(sectionLength>1){
           _firstArr.splice(0,1);
@@ -168,8 +214,8 @@ export class ScrollingDisplayComponent implements OnInit {
         if(!_firstArr[1]){
             _firstArr[1]='';
         }
-        console.log(_firstArr[1]);
-        context.FirstStringPlayAudio(_firstArr[0].toString());
+        console.log("_firstArr[1]"+_firstArr[1]);
+        context.FirstStringPlayAudio(_firstArr[0]);
           // console.log(_firstArr[1]);
           // this.SecondStringPlayAudio(_firstArr[1].toString());
           // console.log(_firstArr[2]);
@@ -180,7 +226,6 @@ export class ScrollingDisplayComponent implements OnInit {
           // this.playAudio(_firstArr[4].toString());
           // console.log(_firstArr[5]);
           // this.playAudio(_firstArr[5].toString());
-      }, 250);
-    // }, 1000);
+      }, 375);
   }
 }

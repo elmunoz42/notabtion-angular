@@ -11,7 +11,7 @@ import { Song } from './../song';
 export class SongFormComponent implements OnInit {
 
   @Output() newSongSender = new EventEmitter()
-  song: Song = new Song("","","",90);
+  song: Song = new Song("","","",80);
 
   constructor() { }
 
